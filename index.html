@@ -72,7 +72,7 @@
           <form action="/login" method="post" class="signup col-xs-12">
             <p><input required class="form-control" type="email" name="email" placeholder="What's your work e-mail?"></p>
             <p><input required class="form-control" type="text" name="fullname" placeholder="What's your real first and last name?"></p>
-            <p id="filled-in-from-gravatar" class="hide">We've filled in your public info from Gravatar for your convenience. Feel free to change as you like!</p>
+            <p id="filled-in-from-gravatar" class="hide">Wohoo, hey, good lookin'! We've filled in your public info from Gravatar for your convenience. Feel free to change as you like!</p>
             <p>Your e-mail address is safe with us.</p>
             <p class="hide text-danger">Sorry, something went wrong.</p>
             <p><br/><button type="submit" class="btn btn-default btn-lg"><span class="signup">Get your API key</span><span class="signin">Sign in</span></button> or <a href='#back'>go back</a></p>
@@ -200,11 +200,11 @@
         $.getJSON('https://www.gravatar.com/' + emailHash + '.json?s=200&callback=?')
         .then(function(result){
           var profile = result.entry[0];
+          $('#filled-in-from-gravatar').removeClass('hide').show();
 
           $('table img').attr('src', 'https://www.gravatar.com/avatar/' + emailHash + '?s=200');
 
           if(profile.name && profile.name.formatted && !$('form [name="fullname"]').val()) {
-            $('#filled-in-from-gravatar').removeClass('hide').show();
             $('form [name="fullname"]').val(profile.name.formatted);
           }
         })
