@@ -92,11 +92,11 @@
       <div class="col-sm-offset-1 col-sm-5">
         <table class="center-text">
           <tr>
-            <td rowspan="2"><img class="lg" src="//beta.favicn.com/slack.com/144.png"></td>
-            <td><img class="md" src="//beta.favicn.com/slack.com/42.png"></td>
+            <td rowspan="2"><img class="lg"></td>
+            <td><img class="md"></td>
           </tr>
           <tr>
-            <td><img class="sm" src="//beta.favicn.com/slack.com/16.png"></td>
+            <td><img class="sm"></td>
           </tr>
         </table>
       </div>
@@ -148,10 +148,13 @@
   (function($){
     $(function(){
 
+      showRandomFavicon();
+
       $('a[href="#back"]').click(function(e){
         e.preventDefault()
         $('#signup-fields').hide();
         $('#playground').show();
+        if($('table img').attr('src').match(/^https:\/\/www\.gravatar\.com\/avatar/)) showRandomFavicon();
       });
 
       $('#try li > a[href="#"]').click(function(e){
@@ -159,15 +162,23 @@
         $('#tryDomain').val($(this).text()).change();
       });
 
+      function changeFaviconTo(domain) {
+        var baseUrl = 'https://beta.favicn.com/'+domain;
+        $('#try img.sm').attr('src', baseUrl + '/32.png');
+        $('#try img.md').attr('src', baseUrl + '/57.png');
+        $('#try img.lg').attr('src', baseUrl + '/144.png');
+      }
+
+      function showRandomFavicon() {
+        var allDomains = $('#playground li a[href="#"]');
+        var randomIndex = Math.random() * allDomains.length | 0;
+        changeFaviconTo($(allDomains[randomIndex]).text());
+      }
+
       $('#tryDomain').change(function(e){
         var domain = $(this).val().trim();
         if(domain.length == 0) return;
-
-        $('#try img[src^="//beta.favicn.com"]').each(function(i, el){
-          $el = $(el);
-          var src = $el.attr('src');
-          $el.attr('src', src.replace(/[^\/]+(\/\d+\.png$)/, encodeURIComponent(domain) + '$1'));
-        })
+        changeFaviconTo(domain);
       });
 
       function signUpOrSignInClicked(e) {
