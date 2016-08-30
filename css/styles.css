@@ -1,0 +1,106 @@
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, p, ul, li, dl, input {
+  font-size: 17px;
+}
+
+input, button {
+  border-color: #ddd;
+}
+
+dt {
+  margin-top: 1em;
+}
+
+dl :first-of-type {
+  margin-top: 0;
+}
+
+body, p, h1, h2, h3, h4, h5, a {
+  font-family: 'Helvetica Neue', 'HelveticaNeue', 'Helvetica', sans-serif;
+  color: #617D8A;
+}
+
+header, #try {
+  background: #FBFBFB;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#try {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#try ul {
+  margin-top: 1em;
+  list-style: none;
+}
+
+.container-spacious {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+code {
+  background: #F7F8F9;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: 'Consolas', monospace;
+  font-size: 14px;
+  color: #617D8A;
+  padding: 20px;
+  display: block;
+  margin-bottom: 20px;
+  overflow: scroll;
+}
+
+#try :first {
+  margin-top: 0;
+}
+
+#try .top-margin {
+  margin-top: 4em;
+}
+
+#try table {
+  border-radius: 3px;
+}
+
+#try table td {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+}
+
+#try table td .lg {
+  width: 144px;
+  height: 144px;
+}
+
+#try table td .md {
+  width: 42px;
+  height: 42px;
+}
+
+#try table td .sm {
+  width: 16px;
+  height: 16px;
+}
+
+nav.navbar-fixed-top {
+  -background: #78b5f8;
+  -color: white;
+  border-bottom: none;
+}
+
+nav.navbar-fixed-top .navbar-brand {
+  -color: white;
+}
+
+footer img.social {
+  width: 16px;
+  height: 16px;
+}
