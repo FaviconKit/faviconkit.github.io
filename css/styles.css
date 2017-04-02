@@ -56,8 +56,8 @@ code {
   overflow: scroll;
 }
 
-#try :first {
-  margin-top: 0;
+#try {
+  first-margin-top: 0;
 }
 
 #try .top-margin {

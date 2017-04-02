@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title></title>
+    <title>Favicon Kit &middot; get and embed Favicons from any website</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="utf-8" />
 
-    <script type="text/javascript" src="//fast.fonts.net/jsapi/f842b727-e249-4850-bacd-147f029f21b9.js"></script>
+    <!--script type="text/javascript" src="//fast.fonts.net/jsapi/f842b727-e249-4850-bacd-147f029f21b9.js"></script-->
     <script type="text/javascript">
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
       analytics.load('0hSpvIe6QqLgLP2xLr5Na2Z93txJd9uj');
@@ -26,20 +27,28 @@
             a.appendChild(r);
         })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
+    <script type="text/javascript">
+  if(/\btoken=/.test(document.cookie)) window.location.href = '/dashboard';
+</script>
+
 </head>
 <body class="home">
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/g/jquery@3.1.0,lodash@4.15.0,bootstrap@3.3.7,js-cookie@2.2.0,jquery.payment@2.0.0"></script>
+  <script src="//0.0.0.0:35729/livereload.js"></script>
   <section id="try">
   <div class="container container-spacious">
     <h2>Favicon Kit</h2>
-    <p>A reliable, simple service to embed Favicons from any web site.</p>
+    <p>The reliable API to get Favicons from any web site.</p>
     <div id="demo" class="row top-margin">
       <div class="col-sm-5">
 
         <div id="playground" class="row form-group form-group-lg">
           <div class="col-sm-12">
-            <input class="form-control" type="text" id="tryDomain" placeholder="Try it yourself, e.g. with slack.com, github.com, ...">
-            <div class="row">
+
+            <input class="form-control" type="text" id="tryDomain" placeholder="Enter a URL to get its Favicon">
+
+            <div id="suggestions" class="row">
               <ul class="col-xs-4 col-sm-4">
                 <li><a href="#">apple<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">dribbble<span class="hidden-xs hidden-sm">.com</span></a></li>
@@ -63,13 +72,13 @@
               </ul>
             </div>
 
-            <p><br/><a href="#signup" class="btn btn-lg btn-default">Get your API key</a> or <a href="#signin">sign in</a></p>
+            <p><br/><a href="#signup" class="btn btn-lg btn-default">Get your own API key</a> or <a href="#signin">sign in</a></p>
 
           </div>
         </div>
 
         <div id="signup-fields" class="row form-group form-group-lg hide">
-          <form action="/login" method="post" class="signup col-xs-12">
+          <form action="//localhost:3000/login" method="post" class="signup col-xs-12">
             <p><input required class="form-control" type="email" name="email" placeholder="What's your work e-mail?"></p>
             <p><input required class="form-control" type="text" name="fullname" placeholder="What's your real first and last name?"></p>
             <p id="filled-in-from-gravatar" class="hide">Wohoo, hey, good lookin'! We've filled in your public info from Gravatar for your convenience. Feel free to change as you like!</p>
@@ -140,21 +149,50 @@
     </div>
   </footer>
 
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/g/jquery@3.1.0,lodash@4.15.0,bootstrap@3.3.7"></script>
-  <script src="//0.0.0.0:35729/livereload.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/js-md5/0.4.1/md5.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/gesquive/bootstrap-add-clear/master/bootstrap-add-clear.min.js"></script>
+
 <script type="text/javascript">
   (function($){
     $(function(){
 
-      showRandomFavicon();
+
+      /*------------------------------------------------------------------------
+        Playground
+      ------------------------------------------------------------------------*/
+      var $playgroundDomain = $('#tryDomain');
+      $playgroundDomain.addClear();
+
+      showPlayground();
+
+      function showPlayground() {
+        $('#playground').show();
+        var currentIconSrc = $('table img').attr('src');
+        if(!currentIconSrc || /^https:\/\/www\.gravatar\.com\/avatar/.test(currentIconSrc)) {
+          $playgroundDomain.val()
+            ? changeFaviconTo($playgroundDomain.val())
+            : showRandomFavicon();
+        }
+        window.setTimeout(function(){
+          $playgroundDomain.focus().select();
+        },10);
+
+      }
+
+      $('#tryDomain').change(function(e){
+        var domain = $(this).val().trim();
+        if(domain.length == 0) return;
+        changeFaviconTo(domain);
+      });
 
       $('a[href="#back"]').click(function(e){
         e.preventDefault()
         $('#signup-fields').hide();
-        $('#playground').show();
-        if($('table img').attr('src').match(/^https:\/\/www\.gravatar\.com\/avatar/)) showRandomFavicon();
+        if(false) {
+          $('#playground').show();
+          if($('table img').attr('src').match(/^https:\/\/www\.gravatar\.com\/avatar/)) showRandomFavicon();
+        }
+        else showPlayground();
       });
 
       $('#try li > a[href="#"]').click(function(e){
@@ -163,8 +201,8 @@
       });
 
       function changeFaviconTo(domain) {
-        var baseUrl = 'https://beta.favicn.com/'+domain;
-        $('#try img.sm').attr('src', baseUrl + '/32.png');
+        var baseUrl = 'https://api.faviconkit.com/PdPb1cxbQdnbNbe7dUbicicdzcNbTfdEd/icons/'+domain;
+        $('#try img.sm').attr('src', baseUrl + '/16.png');
         $('#try img.md').attr('src', baseUrl + '/57.png');
         $('#try img.lg').attr('src', baseUrl + '/144.png');
       }
@@ -174,12 +212,6 @@
         var randomIndex = Math.random() * allDomains.length | 0;
         changeFaviconTo($(allDomains[randomIndex]).text());
       }
-
-      $('#tryDomain').change(function(e){
-        var domain = $(this).val().trim();
-        if(domain.length == 0) return;
-        changeFaviconTo(domain);
-      });
 
       function signUpOrSignInClicked(e) {
         e.preventDefault();
@@ -237,13 +269,20 @@
           method: $this.attr('method'),
           data: data
         })
-        .fail(function(result){
-          $('#signup-fields').hide();
-          $('#we-sent-you-email .fullname').text(data.fullname);
-          $('#we-sent-you-email .yay')[data.fullname ? 'show' :  'hide']();
-          $('#we-sent-you-email').removeClass('hide').show();
+        .done(function(result, textStatus, jqXHR){
+          try {
+            console.log(result, data);
+            $('#signup-fields').hide();
+            $('#we-sent-you-email .fullname').text(data.fullname);
+            $('#we-sent-you-email .yay')[data.fullname ? 'show' :  'hide']();
+            $('#we-sent-you-email').removeClass('hide').show();
+          }
+          catch(err) {
+            console.log("Exception", err);
+          }
         })
-        .fail(function(){
+        .fail(function(jqXHR, textStatus, errorThrown){
+          console.log("Error", errorThrown);
           $('form .text-danger').removeClass('hide').show();
           window.setTimeout(function(){
             $('form input:visible').first().focus().select();
