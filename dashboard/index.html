@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Favicon Kit &middot; get and embed Favicons from any website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="utf-8" />
+
+    <!--script type="text/javascript" src="//fast.fonts.net/jsapi/f842b727-e249-4850-bacd-147f029f21b9.js"></script-->
+    <script type="text/javascript">
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+      analytics.load('0hSpvIe6QqLgLP2xLr5Na2Z93txJd9uj');
+      analytics.page()
+      }}();
+    </script>
+    <!-- Hotjar Tracking Code for http://faviconkit.com -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:274897,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    
+</head>
+<body class="dashboard">
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/g/jquery@3.1.0,lodash@4.15.0,bootstrap@3.3.7,js-cookie@2.2.0,jquery.payment@2.0.0"></script>
+  <script src="//0.0.0.0:35729/livereload.js"></script>
+  <header>
+  <div class="container">
+    <h1>Hi there, <span class="fullName">dear friend</span>!</h1>
+  </div>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Grab your API key</h3>
+          <code class="apiKey">--------------------------------</code>
+          <p>You can <a href="#reset">reset your key</a> in case something bad happened to it.</p>
+        </div>
+
+        <div class="col-sm-offset-1 col-sm-5">
+          <h3>Your usage this month</h3>
+          <p>Icons extracted: <span class="totalRequestsServed">--</span> / <span class="totalRequestsLimit">--</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<section>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6">
+        <h3>Payment Details</h3>
+        <p>Enter your payment details below to extract more Favicons.</p>
+
+        <form id="stripe" class="row">
+
+          <div class="form-group col-sm-6">
+            <label class="control-label" for="cardnumber">Credit card number</label>
+            <input type="tel" class="cc-number form-control input-lg" size="20" data-stripe="number" autocomplete="cc-number">
+          </div>
+
+          <div class="form-group col-sm-3">
+            <label class="control-label" for="cardnumber">Expiration</label>
+            <div class="input-group input-group-lg">
+              <input type="tel" class="cc-exp-month form-control input-lg" placeholder="MM" size="2" data-stripe="exp_month">
+              <span class="input-group-btn" style="width:0"></span>
+              <input type="tel" class="cc-exp-year form-control input-lg" placeholder="YY" size="2" data-stripe="exp_year" style="margin-left: -1px">
+            </div>
+          </div>
+
+          <div class="form-group col-sm-3">
+            <label class="control-label">CVC</label>
+            <input type="text" class="cc-cvc form-control input-lg" size="4" data-stripe="cvc" autocomplete="off">
+          </div>
+
+          <div class="col-xs-12">
+            <div class="alert alert-danger hide" role="alert"></div>
+          </div>
+
+          <div class="form-group col-sm-12">
+            <p>
+              <label for="havevat"><input id="havevat" type="checkbox" /> I have a EU VAT number</label>
+            </p>
+            <button type="submit" class="btn btn-lg btn-default">Submit Payment Info</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-sm-offset-1 col-sm-5">
+        <h3>Account Details</h3>
+        <p>You are currently limited to 500 uploads per month.</p>
+
+        <p>The account is linked to <strong class="email"></strong>. Please contact us at support@faviconkit.com if you want to change your email address or if you need help.</p>
+
+        <p>Favicon Kit is sold by Andreas Pizsa (VAT number NL816042019B01) and operated by Codebase Ltd. Payment details are securely handled by our payment partner Stripe. You will be billed for your API usage per calendar month.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+
+  $.getJSON('//localhost:3000/login/me?callback=?')
+  .done(function(result){
+    $(function(){
+      _.mapKeys(result, function(value, key){
+        console.log(key, value);
+        $('.'+key).text(value);
+      });
+    })
+  })
+  .fail(function(){
+    Cookies.remove('token');
+    window.location.href = '/';
+  })
+
+  $(function(){
+    Stripe.setPublishableKey('pk_test_VnxMGr79q5dd2N2cTza4iYZ0');
+
+    var $form = $('form#stripe').submit(function(e){
+      $submitButton = $form.find('[type="submit"]');
+
+      e.preventDefault();
+
+      $form.find('.alert').hide();
+      $form.find('.has-error').removeClass('has-error');
+
+      $submitButton.attr('disabled', true);
+      Stripe.card.createToken($form, function(status, response){
+        console.log(status, response);
+
+        if(response.error) {
+
+          var selector = '[data-stripe="' + response.error.param + '"]';
+          console.log(selector);
+          $form
+            .find(selector)
+            .focus().select()
+            .closest('.form-group').addClass('has-error');
+
+          $form.find('.alert').text(response.error.message).removeClass('hide').slideDown();
+          $submitButton.removeAttr('disabled');
+          return;
+        }
+
+        //$form.append($('<input type="hidden" name="stripeToken">').val(response.id));
+        $submitButton.removeAttr('disabled');
+        //$form.get(0).submit();
+      });
+    });
+
+    $form.find('[data-stripe="number"]').payment('formatCardNumber');
+    $form.find('[data-stripe="cvc"]').payment('formatCardCVC');
+  });
+</script>
+
+</body>
+</html>
