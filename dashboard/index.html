@@ -112,7 +112,7 @@
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
 
-  $.getJSON('//localhost:3000/login/me?callback=?')
+  $.getJSON('//api.faviconkit.com/login/me?callback=?')
   .done(function(result){
     $(function(){
       _.mapKeys(result, function(value, key){
@@ -122,7 +122,7 @@
     })
   })
   .fail(function(){
-    Cookies.remove('token');
+    Cookies.remove('token', { domain: '.faviconkit.com' } );
     window.location.href = '/';
   })
 
