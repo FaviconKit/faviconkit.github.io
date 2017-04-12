@@ -75,6 +75,10 @@ code {
   border: 1px solid #ddd;
 }
 
+#try table td img:not([src]) {
+  background: #FBFBFB;
+}
+
 #try table td .lg {
   width: 144px;
   height: 144px;
