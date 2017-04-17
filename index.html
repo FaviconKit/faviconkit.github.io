@@ -85,8 +85,8 @@ dt i.fa {
               </ul>
             </div>
 
-            <p><br/><a href="#signup" class="btn btn-lg btn-default">Sign up</a> or <a href="#signin">sign in</a></p>
-
+            <p><br />Use Favicon Kit for free while it is in beta.</p>
+            <p><br/><a href="#signup" class="btn btn-lg btn-default">Start using Favicon Kit</a>&nbsp; or <a href="#signin">log in to your dashboard</a></p>
           </div>
         </div>
 
@@ -95,7 +95,7 @@ dt i.fa {
             <p><input required class="form-control" type="email" name="email" placeholder="What's your work e-mail?"></p>
             <p><input required class="form-control" type="text" name="fullname" placeholder="What's your real first and last name?"></p>
             <p id="filled-in-from-gravatar" class="hide">Wohoo, hey, good lookin'! We've filled in your public info from Gravatar for your convenience. Feel free to change as you like!</p>
-            <p>Your e-mail address is safe with us.</p>
+            <p>We hate spam. Your e-mail address is safe with us.</p>
             <p class="hide text-danger">Sorry, something went wrong.</p>
             <p><br/><button type="submit" class="btn btn-default btn-lg"><span class="signup">Get your API key</span><span class="signin">Sign in</span></button> or <a href='#back'>go back</a></p>
           </form>
@@ -139,8 +139,8 @@ dt i.fa {
           <dt><i class="fa fa-diamond" aria-hidden="true"></i> Retina &amp; HDPI icons</dt>
           <dd>Embed icons of any size for a crisp on-screen display.</dd>
 
-          <dt><i class="fa fa-globe" aria-hidden="true"></i>Blazing fast delivery in milliseconds</dt>
-          <dd>Icons are parsed quickly and cached in a world-wide CDN.</dd>
+          <dt><i class="fa fa-globe" aria-hidden="true"></i>Fast, CDN-powered delivery</dt>
+          <dd>Icons are extracted quickly and then cached in a global CDN.</dd>
         </dl>
         <dl class="col-sm-6">
           <dt><i class="fa fa-shield" aria-hidden="true"></i> SSL Support</dt>
@@ -150,7 +150,7 @@ dt i.fa {
           <dd>Professional appearance even if a Favicon is unavailable.</dd>
 
           <dt><i class="fa fa-heartbeat" aria-hidden="true"></i> Production Ready</dt>
-          <dd>Start using FaviconKit today, use your time for other priorities.</dd>
+          <dd>Use your precious time for other priorities.</dd>
         </dl>
       </div>
     </div>
@@ -190,20 +190,25 @@ dt i.fa {
           $playgroundDomain.focus().select();
         },10);
 
+        $('#try img')
+          .on('load error', function() {
+            $(this).show();
+          })
       }
 
       $('#tryDomain').change(function(e){
-        var domain = $(this).val().trim();
+        var domain = $(this).val().trim().toLowerCase();
         if(domain.length == 0) return;
 
         var hostname;
         try {
           hostname = (new window.URL(domain)).hostname;
         }
-        catch (e){
+        catch (e) {
           hostname=domain;
         }
         changeFaviconTo(hostname);
+        $('#tryDomain').select();
       });
 
       $('a[href="#back"]').click(function(e){
@@ -232,7 +237,9 @@ dt i.fa {
       function showRandomFavicon() {
         var allDomains = $('#playground li a[href="#"]');
         var randomIndex = Math.random() * allDomains.length | 0;
-        changeFaviconTo($(allDomains[randomIndex]).text());
+        var domain = $(allDomains[randomIndex]).text();
+        $('#tryDomain').val(domain);
+        changeFaviconTo(domain);
       }
 
       function signUpOrSignInClicked(e) {
