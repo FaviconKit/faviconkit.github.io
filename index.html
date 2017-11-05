@@ -85,20 +85,22 @@ dt i.fa {
               </ul>
             </div>
 
+            <!--
             <p><br />Use Favicon Kit for free while it is in beta.</p>
             <p><br/><a href="#signup" class="btn btn-lg btn-default">Start using Favicon Kit</a>&nbsp; or <a href="#signin">log in to your dashboard</a></p>
+            -->
           </div>
         </div>
 
         <div id="signup-fields" class="row form-group form-group-lg hide">
-          <form action="//api.faviconkit.com/login" method="post" class="signup col-xs-12">
+          <!--form action="" method="post" class="signup col-xs-12">
             <p><input required class="form-control" type="email" name="email" placeholder="What's your work e-mail?"></p>
             <p><input required class="form-control" type="text" name="fullname" placeholder="What's your real first and last name?"></p>
             <p id="filled-in-from-gravatar" class="hide">Wohoo, hey, good lookin'! We've filled in your public info from Gravatar for your convenience. Feel free to change as you like!</p>
             <p>We hate spam. Your e-mail address is safe with us.</p>
             <p class="hide text-danger">Sorry, something went wrong.</p>
             <p><br/><button type="submit" class="btn btn-default btn-lg"><span class="signup">Get your API key</span><span class="signin">Sign in</span></button> or <a href='#back'>go back</a></p>
-          </form>
+          </form-->
         </div>
 
         <div id="we-sent-you-email" class="hide">
@@ -229,10 +231,10 @@ dt i.fa {
 
       function changeFaviconTo(domain) {
         $('#try img').removeAttr('src');
-        var baseUrl = '//api.faviconkit.com/icons/'+domain;
-        $('#try img.sm').attr('src', baseUrl + '/16.png');
-        $('#try img.md').attr('src', baseUrl + '/57.png');
-        $('#try img.lg').attr('src', baseUrl + '/144.png');
+        var baseUrl = '//api.faviconkit.com/'+domain;
+        $('#try img.sm').attr('src', baseUrl + '/16');
+        $('#try img.md').attr('src', baseUrl + '/57');
+        $('#try img.lg').attr('src', baseUrl + '/144');
       }
 
       function showRandomFavicon() {
