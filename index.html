@@ -210,6 +210,7 @@ dt i.fa {
         catch (e) {
           hostname=domain;
         }
+        if(hostname.indexOf('.') === -1) hostname += '.com'
         changeFaviconTo(hostname);
         $('#tryDomain').select();
       });
