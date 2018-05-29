@@ -3,7 +3,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-html, p, ul, li, dl, input {
+html, div, p, ul, li, dl, input {
   font-size: 17px;
 }
 
@@ -107,4 +107,21 @@ nav.navbar-fixed-top .navbar-brand {
 footer img.social {
   width: 16px;
   height: 16px;
+}
+
+.btn.btn-xl {
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 2.5em;
+  padding: 0 2em;
+}
+
+.btn-xl.btn-primary {
+  background-color: #267DDD;
+  border-color: #267DDD;
+  color: white;
+}
+
+.btn-round {
+  border-radius: 99999px;
 }

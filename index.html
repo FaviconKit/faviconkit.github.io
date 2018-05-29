@@ -6,7 +6,7 @@
 
     <title>Favicon Kit &middot; get and embed Favicons from any website with this simple API</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <meta charset="utf-8" />
 
@@ -28,11 +28,8 @@
             a.appendChild(r);
         })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-    <link rel="canonical" href="https://faviconkit.com">
-<script type="text/javascript">
-  if(window.location.href.startsWith('http://faviconkit.com/')) {
-    window.location = window.location.href.replace(/^http:/, 'https:')
-  }
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/g/jquery@3.1.0,lodash@4.15.0,bootstrap@3.3.7,js-cookie@2.2.0,jquery.payment@2.0.0"></script>
+    <script type="text/javascript">
   if(/\btoken=/.test(document.cookie)) window.location.href = '/dashboard';
 </script>
 <style type="text/css">
@@ -47,16 +44,17 @@ dt i.fa {
   top: 0.27ex;
 }
 </style>
+<script type="text/javascript" src="https://cdn.rawgit.com/gesquive/bootstrap-add-clear/master/bootstrap-add-clear.min.js"></script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 
 </head>
 <body class="home">
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/g/jquery@3.1.0,lodash@4.15.0,bootstrap@3.3.7,js-cookie@2.2.0,jquery.payment@2.0.0"></script>
   <script src="//0.0.0.0:35729/livereload.js"></script>
   <section id="try">
   <div class="container">
     <h2>Favicon Kit <small>beta</small></h2>
-    <p>Get and embed Favicons from any web site with one simple API.</p>
+    <p>Get and embed Favicons from any web site with one simple, reliable API.</p>
     <div id="demo" class="row top-margin">
       <div class="col-sm-5">
 
@@ -67,69 +65,56 @@ dt i.fa {
 
             <div id="suggestions" class="row">
               <ul class="col-xs-4 col-sm-4">
+                <li><a href="#">aws<span class="hidden-xs hidden-sm">.amazon.com</span></a></li>
                 <li><a href="#">apple<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">dribbble<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">github<span class="hidden-xs hidden-sm">.com</span></a></li>
-                <li><a href="#">maps.google<span class="hidden-xs hidden-sm">.com</span></a></li>
-                <li><a href="#">medium<span class="hidden-xs hidden-sm">.com</span></a></li>
+                <li><a href="#">intercom<span class="hidden-xs hidden-sm">.com</span></a></li>
+                <li><a href="#">maps<span class="hidden-xs hidden-sm">.google.com</span></a></li>
               </ul>
               <ul class="col-xs-4 col-sm-4">
+                <li><a href="#">medium<span class="hidden-xs hidden-sm">.com</span></a></li>
+                <li><a href="#">mailchimp<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">netflix<span class="hidden-xs hidden-sm">.com</span></a></li>
-                <li><a href="#">nytimes<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">producthunt<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">reddit<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">slack<span class="hidden-xs hidden-sm">.com</span></a></li>
               </ul>
               <ul class="col-xs-4 col-sm-4">
+                <li><a href="#">segment<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">soundcloud<span class="hidden-xs hidden-sm">.com</span></a></li>
-                <li><a href="#">starbucks<span class="hidden-xs hidden-sm">.com</span></a></li>
+                <li><a href="#">stackoverflow<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">techcrunch<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">vimeo<span class="hidden-xs hidden-sm">.com</span></a></li>
                 <li><a href="#">whatsapp<span class="hidden-xs hidden-sm">.com</span></a></li>
               </ul>
             </div>
-
-            <!--
-            <p><br />Use Favicon Kit for free while it is in beta.</p>
-            <p><br/><a href="#signup" class="btn btn-lg btn-default">Start using Favicon Kit</a>&nbsp; or <a href="#signin">log in to your dashboard</a></p>
-            -->
           </div>
         </div>
-
-        <div id="signup-fields" class="row x-form-group x-form-group-lg x-hide" style="margin-bottom:2em">
-<a class="typeform-share button" href="https://faviconkit.typeform.com/to/vnDURK" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#267DDD;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 33px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-hide-headers=true data-hide-footer=true target="_blank">Join the Beta </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
-          <!--form action="" method="post" class="signup col-xs-12">
-            <p><input required class="form-control" type="email" name="email" placeholder="What's your work e-mail?"></p>
-            <p><input required class="form-control" type="text" name="fullname" placeholder="What's your real first and last name?"></p>
-            <p id="filled-in-from-gravatar" class="hide">Wohoo, hey, good lookin'! We've filled in your public info from Gravatar for your convenience. Feel free to change as you like!</p>
-            <p>We hate spam. Your e-mail address is safe with us.</p>
-            <p class="hide text-danger">Sorry, something went wrong.</p>
-            <p><br/><button type="submit" class="btn btn-default btn-lg"><span class="signup">Get your API key</span><span class="signin">Sign in</span></button> or <a href='#back'>go back</a></p>
-          </form-->
-        </div>
-
-        <div id="we-sent-you-email" class="hide">
-          <h3>Link is in your e-mail!</h3>
-          <p><strong class="yay">Yay, <span class="fullname"></span>!</strong> Please check your inbox, we've emailed you a link to your Favicon Kit dashboard with your API Key!</p>
-          <p>(If it's not there after a few minutes, please check your spam folder or <a href="https://twitter.com/intent/tweet/?text=@FaviconKit" target=_blank>get in touch on twitter</a>)</p>
-        </div>
-
       </div>
-
-
 
       <div class="col-sm-offset-1 col-sm-5">
         <table class="center-text">
           <tr>
-            <td rowspan="2"><img class="lg" referrerpolicy="origin"></td>
-            <td><img class="md" referrerpolicy="origin"></td>
+            <td rowspan="2"><img class="lg"></td>
+            <td><img class="md"></td>
           </tr>
           <tr>
-            <td><img class="sm" referrerpolicy="origin"></td>
+            <td><img class="sm"></td>
           </tr>
         </table>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <a href="#signup" class="btn btn-lg btn-xl btn-primary btn-round">Join the Beta</a>&nbsp;&nbsp;it’s free!<span class="hidden"> or <a href="#signin">Log in to your Dashboard</a></span></p>
+        <br/>
+      </div>
+    </div>
+
+
+
 
   </div>
 
@@ -140,25 +125,24 @@ dt i.fa {
       <div class="row">
 
         <dl class="col-sm-6">
-          <dt><i class="fa fa-code" aria-hidden="true"></i> Easy integration</dt>
-          <dd>Use Favicons in your web site or mobile app just like regular images.</dd>
+          <dt><i class="fa fa-code" aria-hidden="true"></i> Easy integration.</dt>
+          <dd>Embed Favicons just like regular images in your web or mobile app.</dd>
 
-          <dt><i class="fa fa-diamond" aria-hidden="true"></i> Retina &amp; HDPI icons</dt>
-          <dd>Embed icons of any size for crisp on-screen display.</dd>
+          <dt><i class="fa fa-diamond" aria-hidden="true"></i> High Quality Retina &amp; HDPI icons.</dt>
+          <dd>Up to 144&times;144 pixels for crystal clear appearance on all devices.</dd>
 
-          <dt><i class="fa fa-globe" aria-hidden="true"></i>Smooth user experience</dt>
-          <dd>Super fast extraction &amp; CDN-powered global delivery.</dd>
+          <dt><i class="fa fa-globe" aria-hidden="true"></i>Blazing fast extraction, caching &amp; delivery.</dt>
+          <dd>Parallel parsing, 30+ edge servers, CDN-powered global delivery.</dd>
         </dl>
-
         <dl class="col-sm-6">
-          <dt><i class="fa fa-shield" aria-hidden="true"></i> SSL Support</dt>
-          <dd>Use and embed icons from http and https websites.</dd>
+          <dt><i class="fa fa-shield" aria-hidden="true"></i> SSL Support.</dt>
+          <dd>Securely embed icons even from unsecure http-only websites.</dd>
 
-          <dt><i class="fa fa-life-ring" aria-hidden="true"></i> Fallback Icons</dt>
+          <dt><i class="fa fa-life-ring" aria-hidden="true"></i> Fallback Icons.</dt>
           <dd>Beautiful visual appearance even if a Favicon is unavailable.</dd>
 
-          <dt><i class="fa fa-heartbeat" aria-hidden="true"></i> Production Ready</dt>
-          <dd>Developers can focus on other important priorities.</dd>
+          <dt><i class="fa fa-heartbeat" aria-hidden="true"></i> Production Ready.</dt>
+          <dd>Reliable service with support and guaranteed uptime.</dd>
         </dl>
       </div>
     </div>
@@ -170,64 +154,45 @@ dt i.fa {
     </div>
   </footer>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/js-md5/0.4.1/md5.min.js"></script>
-<script type="text/javascript" src="https://cdn.rawgit.com/gesquive/bootstrap-add-clear/master/bootstrap-add-clear.min.js"></script>
-
+  
 <script type="text/javascript">
   (function($){
-    $(function(){
+    $(function() {
 
+      $('[href="#signup"]').click(function(e){
+        e.preventDefault()
+        require(["mojo/signup-forms/Loader"], function(L) {
+          document.cookie = "MCPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+          document.cookie = "MCPopupSubscribed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+          L.start({
+            "baseUrl":"mc.us8.list-manage.com",
+            "uuid":"0fb1425a483a893ca13852aaa",
+            "lid":"090fa56d54"
+          })
+        })
+      })
+
+      showRandomFavicon();
 
       /*------------------------------------------------------------------------
         Playground
       ------------------------------------------------------------------------*/
       var $playgroundDomain = $('#tryDomain');
       $playgroundDomain.addClear();
-
-      showPlayground();
-
-      function showPlayground() {
-        $('#playground').show();
-        var currentIconSrc = $('table img').attr('src');
-        if(!currentIconSrc || /^https:\/\/www\.gravatar\.com\/avatar/.test(currentIconSrc)) {
-          $playgroundDomain.val()
-            ? changeFaviconTo($playgroundDomain.val())
-            : showRandomFavicon();
-        }
-        window.setTimeout(function(){
-          $playgroundDomain.focus().select();
-        },10);
-
-        $('#try img')
-          .on('load error', function() {
-            $(this).show();
-          })
-      }
+      $('#playground').show();
 
       $('#tryDomain').change(function(e){
-        var domain = $(this).val().trim().toLowerCase();
+        var domain = $(this).val().trim();
         if(domain.length == 0) return;
 
         var hostname;
         try {
           hostname = (new window.URL(domain)).hostname;
-        }
-        catch (e) {
+        } catch (e){
           hostname=domain;
         }
-        if(hostname.indexOf('.') === -1) hostname += '.com'
         changeFaviconTo(hostname);
-        $('#tryDomain').select();
-      });
-
-      $('a[href="#back"]').click(function(e){
-        e.preventDefault()
-        $('#signup-fields').hide();
-        if(false) {
-          $('#playground').show();
-          if($('table img').attr('src').match(/^https:\/\/www\.gravatar\.com\/avatar/)) showRandomFavicon();
-        }
-        else showPlayground();
       });
 
       $('#try li > a[href="#"]').click(function(e){
@@ -236,8 +201,8 @@ dt i.fa {
       });
 
       function changeFaviconTo(domain) {
-        $('#try img').removeAttr('src');
-        var baseUrl = '//api.faviconkit.com/'+domain;
+        $('#try img').attr('src', 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+        var baseUrl = 'https://api.faviconkit.com/'+domain;
         $('#try img.sm').attr('src', baseUrl + '/16');
         $('#try img.md').attr('src', baseUrl + '/57');
         $('#try img.lg').attr('src', baseUrl + '/144');
@@ -246,111 +211,11 @@ dt i.fa {
       function showRandomFavicon() {
         var allDomains = $('#playground li a[href="#"]');
         var randomIndex = Math.random() * allDomains.length | 0;
-        var domain = $(allDomains[randomIndex]).text();
-        $('#tryDomain').val(domain);
-        changeFaviconTo(domain);
+        changeFaviconTo($(allDomains[randomIndex]).text());
       }
-
-      function signUpOrSignInClicked(e) {
-        e.preventDefault();
-        $('#playground').hide();
-        $('#signup-fields').removeClass('hide').show();
-        $('form .text-danger').hide();
-      }
-
-      $('a[href="#signup"]').click(function(e){
-        signUpOrSignInClicked(e);
-        $('[name="fullname"]').show().attr('required',true);
-        $('form button[type="submit"] .signup').show();
-        $('form button[type="submit"] .signin').hide();
-        $('form input:visible').first().focus().select();
-      });
-
-      $('a[href="#signin"]').click(function(e){
-        signUpOrSignInClicked(e);
-        $('[name="fullname"]').hide().removeAttr('required');
-        $('form button[type="submit"] .signup').hide();
-        $('form button[type="submit"] .signin').show();
-        $('form input:visible').first().focus().select();
-      });
-
-      $('form [name="email"]').change(function(){
-        var $this = $(this);
-        var emailHash = md5($this.val());
-        $('#filled-in-from-gravatar').hide();
-        $.getJSON('https://www.gravatar.com/' + emailHash + '.json?s=200&callback=?')
-        .then(function(result){
-          var profile = result.entry[0];
-          $('#filled-in-from-gravatar').removeClass('hide').show();
-
-          $('table img').attr('src', 'https://www.gravatar.com/avatar/' + emailHash + '?s=200');
-
-          if(profile.name && profile.name.formatted && !$('form [name="fullname"]').val()) {
-            $('form [name="fullname"]').val(profile.name.formatted);
-          }
-        })
-      });
-
-      $('form').submit(function(e){
-        e.preventDefault();
-        var $this = $(this);
-        var data = $this.serializeArray().reduce(function(result, nameValuePair){
-          result[nameValuePair.name] = nameValuePair.value;
-          return result;
-        },{});
-
-        $('form input, form button').attr('disabled', true);
-        $('form a, form .text-danger').hide();
-
-        $.getJSON({
-          url: $this.attr('action'),
-          method: $this.attr('method'),
-          data: data
-        })
-        .done(function(result, textStatus, jqXHR){
-          try {
-            console.log(result, data);
-            $('#signup-fields').hide();
-            $('#we-sent-you-email .fullname').text(data.fullname);
-            $('#we-sent-you-email .yay')[data.fullname ? 'show' :  'hide']();
-            $('#we-sent-you-email').removeClass('hide').show();
-          }
-          catch(err) {
-            console.log("Exception", err);
-          }
-        })
-        .fail(function(jqXHR, textStatus, errorThrown){
-          console.log("Error", errorThrown);
-          $('form .text-danger').removeClass('hide').show();
-          window.setTimeout(function(){
-            $('form input:visible').first().focus().select();
-          },10);
-        })
-        .always(function(){
-          $('form a').show();
-          $('form input, form button').removeAttr('disabled');
-        });
-      });
-
     });
   }(jQuery));
 </script>
-<!--
-<script>
-  window.productHuntUpcoming = {
-    appId: 2108,
-    position: 'bottomRight',
-  };
-
-  (function(doc, scr, src, a, b) {
-    a = doc.createElement(scr);
-    b = doc.getElementsByTagName(scr)[0];
-    a.async = true;
-    a.src = src;
-    b.parentNode.insertBefore(a, b);
-  })(document, 'script', 'https://assets.producthunt.com/assets/upwigloader.js');
-</script>
--->
 
 </body>
 </html>
