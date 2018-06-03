@@ -138,3 +138,14 @@ footer img.social {
 .btn-round {
   border-radius: 99999px;
 }
+
+#HW_badge_cont {
+  display: inline-block !important;
+  height: 1em  !important;
+  width: 1em  !important;
+}
+
+#HW_badge {
+  top: 0  !important;
+  left: 0  !important;
+}
