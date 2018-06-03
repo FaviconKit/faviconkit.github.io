@@ -38,6 +38,15 @@ header, #try {
   list-style: none;
 }
 
+section.section-spacious {
+  padding-bottom: 120px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+section.section-spacious:not(.first) {
+  padding-top: 120px;
+}
+
 .container-spacious {
   padding-top: 120px;
   padding-bottom: 120px;
