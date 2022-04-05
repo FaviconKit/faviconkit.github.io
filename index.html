@@ -153,7 +153,20 @@
 
   
 <script type="text/javascript">
-  (function($){
+  document.addEventListener('DOMContentLoaded', () => {
+    [...document.querySelectorAll('#suggestions li')]
+      .map(({innerHTML}) => innerHTML.replace(/<[^>]*>/g, ''))
+      .flatMap(domain => [16,57,144].map(size => [domain, size]))
+      .forEach(([domain, size]) => {
+        const preloadTag = document.createElement('link')
+        preloadTag.setAttribute('rel', 'preload')
+        preloadTag.setAttribute('as', 'image')
+        preloadTag.setAttribute('href', `https://organisational-cyan-rooster.faviconkit.com/${domain}/${size}`)
+        document.head.appendChild(preloadTag)
+      })
+  })
+
+  ;(function($){
     $(function() {
 
       showRandomFavicon();
